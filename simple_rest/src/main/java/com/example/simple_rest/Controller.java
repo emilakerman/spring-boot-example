@@ -6,12 +6,13 @@ import java.util.Random;
 
 @RestController
 public class Controller {
-    String[] names = {"Emil", "Dennis", "Birger", "Danne"};
+    String[] names = { "Emil", "Dennis", "Birger", "Danne", "James", "Wally", "Jerry", "Thomas", "Muhammed"};
 
     @GetMapping("/api/test")
     public String getString() {
         return "Hello2";
     }
+
     @GetMapping("/api/randomName")
     public String getRandomName() {
         Random rand = new Random();

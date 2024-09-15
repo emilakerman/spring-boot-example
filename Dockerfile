@@ -8,7 +8,7 @@ RUN wget https://services.gradle.org/distributions/gradle-7.6-bin.zip \
 
 COPY . .
 
-RUN gradle bootJar --no-daemon
+RUN ./gradlew bootJar --no-daemon
 
 FROM openjdk:17-jdk-slim
 

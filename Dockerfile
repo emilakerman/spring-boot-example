@@ -1,7 +1,6 @@
 FROM ubuntu:latest AS build
 
-RUN apt-get update
-RUN apt-get install openjdk-21-jdk -y
+RUN apt-get update && apt-get install -y openjdk-17-jdk wget unzip
 
 RUN wget https://services.gradle.org/distributions/gradle-7.6-bin.zip \
     && unzip gradle-7.6-bin.zip -d /opt \
@@ -9,10 +8,9 @@ RUN wget https://services.gradle.org/distributions/gradle-7.6-bin.zip \
 
 COPY . .
 
-RUN chmod +x ./gradlew
-RUN ./gradlew bootJar --no-daemon
+RUN gradle bootJar --no-daemon
 
-FROM openjdk:21-jdk-slim
+FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 

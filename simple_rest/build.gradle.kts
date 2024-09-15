@@ -24,7 +24,9 @@ dependencies {
 group = "com.example"
 version = "1"
 description = "simple_rest"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
 
 publishing {
     publications.create<MavenPublication>("maven") {

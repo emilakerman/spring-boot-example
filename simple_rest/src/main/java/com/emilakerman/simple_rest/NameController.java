@@ -16,6 +16,11 @@ import java.util.Arrays;
 public class NameController {
     ArrayList<String> names = new ArrayList<>(Arrays.asList("Alice", "Bob", "Charlie", "David", "Eve"));
 
+    /**
+     * The getRandomName function returns a random name from a list of names.
+     * 
+     * @return The `getRandomName` method returns a random name from the `names` list.
+     */
     @GetMapping("/random")
     @ResponseBody
     public String getRandomName() {
@@ -23,11 +28,21 @@ public class NameController {
         int name = rand.nextInt(names.toArray().length);
         return names.get(name);
     }
+    /**
+     * The getAllNames function returns an ArrayList of strings containing all names.
+     * 
+     * @return An ArrayList of Strings containing names is being returned.
+     */
     @GetMapping("/all")
     @ResponseBody
     public ArrayList<String> getAllNames() {
         return names;
     }
+    /**
+     * The postName function adds a name to a list called names.
+     * 
+     * @param name The parameter "name" in the `postName` method is a path variable that is extracted from the URL path. It is then added to a collection named `names`.
+     */
     @PostMapping("/add/{name}")
     public void postName(@PathVariable String name) {
         names.add(name);

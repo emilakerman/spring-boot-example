@@ -1,5 +1,7 @@
 package com.emilakerman.simple_rest;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,5 +48,20 @@ public class NameController {
     @PostMapping("/add/{name}")
     public void postName(@PathVariable String name) {
         names.add(name);
+    }
+    /**
+     * This delete function deletes a specified name from a list if it exists and returns an appropriate response.
+     * 
+     * @param name The `name` parameter in the `@DeleteMapping` method represents the name of the resource that you want to delete. This method takes the name as a path variable in the URL and then checks if
+     * the `names` list contains the specified name. If the name is found in the list,
+     * @return A `ResponseEntity<Void>` is being returned.
+     */
+    @DeleteMapping("/delete/{name}")
+    public ResponseEntity<Void> delete(@PathVariable String name) {
+           if (!names.contains(name)) {
+        return ResponseEntity.notFound().build();
+        }
+        names.remove(name);
+        return ResponseEntity.ok().build();
     }
 }

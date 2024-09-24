@@ -1,4 +1,4 @@
-package com.example.simple_rest;
+package com.emilakerman.simple_rest;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +8,7 @@ import java.util.Random;
 public class Controller {
     String[] names = { "Emil", "Dennis", "Birger", "Danne", "James", "Wally", "Jerry", "Thomas", "Muhammed"};
 
-    @GetMapping("/api/randomName")
+    @GetMapping("/api/v1/randomName")
     public String getRandomName() {
         Random rand = new Random();
         int name = rand.nextInt(names.length);

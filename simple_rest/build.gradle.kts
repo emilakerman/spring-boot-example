@@ -21,7 +21,7 @@ dependencies {
     testImplementation(libs.org.springframework.boot.spring.boot.starter.test)
 }
 
-group = "com.example"
+group = "com.emilakerman"
 version = "1"
 description = "simple_rest"
 java.sourceCompatibility = JavaVersion.VERSION_17

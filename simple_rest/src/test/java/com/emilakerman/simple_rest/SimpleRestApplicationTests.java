@@ -1,4 +1,4 @@
-package com.example.simple_rest;
+package com.emilakerman.simple_rest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
